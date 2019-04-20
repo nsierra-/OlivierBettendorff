@@ -5,19 +5,9 @@ body {
 }
 
 #splash-logo {
-	position: relative;
-	top: 50%;
-	transform: translateY(-55%);
-	height: 50vh;
 	cursor: pointer;
 }
-
 
 .brand-name {
 	margin-top: 7%;
 }
-/*
-.brand-name img {
-	height: 32%;
-}
-*/
