@@ -27,3 +27,24 @@ function addThemeStylesAndScripts()
 	);
 }
 add_action('wp_enqueue_scripts', 'addThemeStylesAndScripts');
+
+function registerCustomPostTypes()
+{
+	/* Bio */
+	$bioTemplate =
+		[
+			'public' => true,
+			'label'  => 'Bio',
+			'show_in_rest' => true,
+			'template' => [
+				["core/image", [ "align" => "right" ]],
+				["core/paragraph", [ "placeholder" => "Incroyable Bio" ]],
+			]
+		]
+	;
+	register_post_type('bio', $bioTemplate );
+
+	$post_type_object = get_post_type_object( 'post' );
+	$post_type_object->template = $bioTemplate["template"];
+}
+add_action("init", "registerCustomPostTypes");

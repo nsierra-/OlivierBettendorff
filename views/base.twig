@@ -1,28 +1,33 @@
 {% block html_head_container %}
 
 {% include 'html-header.twig' %}
-  {% block head %}
-  {% endblock %}
-  </head>
+    {% block head %}
+    {% endblock %}
+    </head>
 {% endblock %}
 
-  <body class="{{body_class}}" data-template="base.twig">
-    <header class="header" >
-      {% block header %}
-      {% endblock %}
-    </header>
+    <body class="{{body_class}}" data-template="base.twig">
+        {% if fn("is_front_page") %}
+            {% include 'splash.twig' %}
+        {% endif %}
+        <div id="main-section" class="container" {% if fn("is_front_page") %} style="display: none;" {% endif %}>
+            <header class="header" >
+                {% block header %}
+                {% endblock %}
+            </header>
 
-    <section id="content" role="main">
-      {% block content %}
-        Sorry, no content
-      {% endblock %}
-    </section>
+            <section id="content" role="main">
+                {% block content %}
+                    Sorry, no content
+                {% endblock %}
+            </section>
 
-    {% block footer %}
-      <footer id="footer">
-        {% include 'footer.twig' %}
-      </footer>
-      {{ function('wp_footer') }}
-    {% endblock %}
-  </body>
+            {% block footer %}
+                <footer id="footer">
+                    {% include 'footer.twig' %}
+                </footer>
+                    {{ function('wp_footer') }}
+            {% endblock %}
+        </div>
+    </body>
 </html>
