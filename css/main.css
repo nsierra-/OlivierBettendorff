@@ -1,0 +1,13 @@
+body {
+	background-image: radial-gradient(closest-corner, white 69%, #ebebeb);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#splash-logo {
+	position: relative;
+	top: 50%;
+	transform: translateY(-55%);
+	height: 50vh;
+	cursor: pointer;
+}
