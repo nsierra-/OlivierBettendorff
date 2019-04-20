@@ -1,20 +1,40 @@
 class SplashSection
 {
-	constructor($)
+	constructor(navigation)
 	{
-		this.$splashLogo = $("#splash-logo");
-		this.$splashDiv = $("#splash-row");
+		this.navigation = navigation;
+		this.$splashLogo = jQuery("#splash-logo");
+		this.$splashSection = jQuery("#splash-section");
 
 		this.$splashLogo.click(this.onSplashLogoClick.bind(this));
 	}
 
 	onSplashLogoClick()
 	{
-		console.log('Hide and show main');
+		this.navigation.switchToSection("main");
 	}
 
-	hide()
+	hide(callback)
 	{
+		this
+			.$splashSection
+			.hide(
+				{
+					complete: callback
+				}
+			)
+		;
+	}
 
+	show(callback)
+	{
+		this
+			.$splashSection
+			.show(
+				{
+					complete: callback
+				}
+			)
+		;
 	}
 }

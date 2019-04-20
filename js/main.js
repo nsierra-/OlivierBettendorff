@@ -1,6 +1,6 @@
 jQuery(
 	$ =>
 	{
-		var navigation = new Navigation($);
+		var navigation = new Navigation();
 	}
 );
