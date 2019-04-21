@@ -43,8 +43,14 @@ function registerCustomPostTypes()
 		]
 	;
 	register_post_type('bio', $bioTemplate );
-
-	$post_type_object = get_post_type_object( 'post' );
-	$post_type_object->template = $bioTemplate["template"];
 }
 add_action("init", "registerCustomPostTypes");
+
+function addMenuToTimberContext($context)
+{
+    $context['menu'] = new \Timber\Menu('primary-menu');
+    $context['is_front_page'] = is_front_page();
+
+    return $context;
+}
+add_filter( 'timber/context', 'addMenuToTimberContext' );

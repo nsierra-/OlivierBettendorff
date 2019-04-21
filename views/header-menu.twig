@@ -1,0 +1,12 @@
+<nav id="header-menu" class="navbar navbar-expand-sm navbar-light pt-0 pt-sm-2">
+
+	<div class="collapse navbar-collapse text-center" id="headerMenuNav">
+		<ul class="navbar-nav mx-auto">
+			{% for item in menu.get_items %}
+				<li class="nav-item mx-4">
+					<a href="#" {% if loop.index == 1 and is_front_page %} class="active" {% endif %}>{{ item.title | upper }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</nav>

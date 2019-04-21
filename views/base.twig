@@ -7,10 +7,10 @@
 {% endblock %}
 
     <body class="{{body_class}}" data-template="base.twig">
-        {% if fn("is_front_page") %}
+{#         {% if is_front_page %}
             {% include 'splash.twig' %}
-        {% endif %}
-        <div id="main-section" class="container" {% if fn("is_front_page") %} style="display: none;" {% endif %}>
+        {% endif %} #}
+        <div id="main-section" class="container" {# {% if is_front_page %} style="display: none;" {% endif %} #}>
             <header class="header" >
                 {% block header %}
                 {% endblock %}
@@ -18,7 +18,6 @@
 
             <section id="content" role="main">
                 {% block content %}
-                    Sorry, no content
                 {% endblock %}
             </section>
 

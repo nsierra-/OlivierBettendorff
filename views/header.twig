@@ -1,5 +1,7 @@
-<div class="row brand-name">
-	<div class="col-8 col-sm-4 offset-2 offset-sm-4 mt-5 text-center">
-		<img src="{{ theme.path }}/img/olivierbettendorff.png" class="img-fluid"></img>
-	</div>
-</div>
+{% block brandname %}
+	{% include 'header-brandname.twig' %}
+{% endblock %}
+
+{% block menu %}
+	{% include 'header-menu.twig' %}
+{% endblock %}
