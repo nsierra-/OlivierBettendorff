@@ -36,3 +36,30 @@ body {
 		#header-menu a.active {
 			opacity: 0.1;
 		}
+
+.hamburger {
+	padding: 0px 0px 0px 0px !important;
+}
+
+.hamburger-box {
+	height: unset !important;
+	width: unset !important;
+	display: unset !important;
+	position: unset !important;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	width: 34px;
+	height: 3px;
+}
+
+.hamburger.is-active .hamburger-inner, .hamburger.is-active .hamburger-inner::before, .hamburger.is-active .hamburger-inner::after {
+}
+
+.hamburger-inner::before {
+	top: -7px;
+}
+
+.hamburger-inner::after {
+	bottom: -7px;
+}

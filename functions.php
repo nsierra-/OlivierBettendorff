@@ -11,19 +11,24 @@ function addThemeStylesAndScripts()
 	wp_enqueue_script("jquery", "$templateDirectoryUri/js/jquery-3.4.0.min.js");
 	wp_enqueue_script("bootstrap", "$templateDirectoryUri/js/bootstrap.bundle.min.js", ["jquery"]);
 
+	/* Hamburgers */
+	wp_enqueue_style("hamburgers", "$templateDirectoryUri/css/hamburgers.css");
+
 	/* Main Site */
 	wp_enqueue_style("main", "$templateDirectoryUri/css/main.css", ["bootstrap"]);
 
 	wp_enqueue_script("navigation", "$templateDirectoryUri/js/navigation.js");
 	wp_enqueue_script("splash-section", "$templateDirectoryUri/js/splash-section.js");
 	wp_enqueue_script("main-section", "$templateDirectoryUri/js/main-section.js");
+	wp_enqueue_script("menu", "$templateDirectoryUri/js/menu.js");
 	wp_enqueue_script(
 		"main",
 		"$templateDirectoryUri/js/main.js",
 		["jquery",
 		"navigation",
 		"splash-section",
-		"main-section"]
+		"main-section",
+		"menu"]
 	);
 }
 add_action('wp_enqueue_scripts', 'addThemeStylesAndScripts');

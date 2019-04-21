@@ -4,6 +4,7 @@ class Navigation
 	{
 		this.splashSection = new SplashSection(this);
 		this.mainSection = new MainSection(this);
+		this.menu = new Menu(this);
 	}
 
 	switchToSection(sectionName)
